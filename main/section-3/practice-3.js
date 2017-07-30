@@ -1,5 +1,29 @@
 'use strict';
 
 module.exports = function createUpdatedCollection(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+	let collectionC = countSameElements(collectionA);
+	collectionC.forEach( (item)=>{
+		if( objectB.value.indexOf(item.key) !== -1)
+			item.count-=getNum(item.count)
+	})
+	return collectionC
+}
+
+function getNum(count){
+	let num = parseInt(count/3)
+	return num;
+}
+
+function countSameElements(collectionA){
+	let collectionC=[];
+	collectionA.forEach( (item)=>{
+		let site = collectionC.findIndex( (letterObj)=>{
+			return letterObj.key === item
+		})
+		if( site === -1 )
+			collectionC.push({key:item,count:1})
+		else
+			collectionC[site].count+=1
+	})
+	return collectionC
 }
