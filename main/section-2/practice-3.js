@@ -5,13 +5,13 @@ module.exports = function countSameElements(collection) {
 	collection.forEach( (item)=>{
 		let site = countSameLetter.findIndex( (letterObj)=>{
 			return letterObj.name === item[0];
-		})
+		});
 		if(site === -1)
-			countSameLetter.push({name:item[0],summary:getNum(item)})
+			countSameLetter.push({name:item[0],summary:getNum(item)});
 		else
-			countSameLetter[site].summary+=getNum(item)
+			countSameLetter[site].summary += getNum(item);
 
-	})
+	});
 	return countSameLetter;
 }
 function getNum(item){

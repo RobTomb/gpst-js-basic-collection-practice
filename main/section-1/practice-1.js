@@ -3,7 +3,7 @@
 module.exports = function collectSameElements(collectionA, collectionB) {
 	let collectionC = [];
 	collectionA.forEach((item)=>{
-		if( collectionB.indexOf(item) != -1 )
+		if( collectionB.indexOf(item) !== -1 )
 			collectionC.push(item);
 	});
 
